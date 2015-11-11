@@ -6,11 +6,15 @@ package eu.stepanvyterna.games.utils.myo.myolibrary;
 public class UnityListenerMethods {
 
     public static class NativeConnector {
-        public static String MYO_SELECTED = "MyoSelected";
+        public static final String MYO_SELECTED = "MyoSelected";
     }
 
     public static class NativeHandler {
-        public static String MYO_SELECTED = "MyoSelected";
+        public static final String MYO_ORIENTATION_DATA = "MyoOrientation";
+        public static final String MYO_POSE = "MyoPose";
+        public static final String MYO_ARM = "MyoArm";
+        public static final String MYO_X_DIRECTION = "MyoDirection";
+        public static final String MYO_DISCONNECTED = "MyoDisconnected";
     }
 
 

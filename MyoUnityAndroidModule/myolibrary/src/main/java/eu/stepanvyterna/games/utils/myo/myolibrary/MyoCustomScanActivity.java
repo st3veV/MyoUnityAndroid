@@ -10,9 +10,9 @@ import android.view.MenuItem;
 import com.thalmic.myo.Hub;
 import com.thalmic.myo.scanner.ScanActivity;
 
-public class CustomScanActivity extends ScanActivity {
+public class MyoCustomScanActivity extends ScanActivity {
 
-    private static String TAG = "CustomScanActivity";
+    private static String TAG = "MyoCustomScanActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -28,7 +28,7 @@ public class MyoNativeHandler {
         if(_instance == null)
         {
             _instance = new MyoNativeHandler();
-            Log.d(TAG, "creating instance");
+            _instance.log("creating instance");
         }
         return _instance;
     }
@@ -45,7 +45,7 @@ public class MyoNativeHandler {
 
             @Override
             public void onOrientationData(Myo myo, long timestamp, Quaternion rotation) {
-                sendMessage("MyoQuaternion", String.format("%f %f %f %f", rotation.w(), rotation.x(), rotation.y(), rotation.z()));
+                sendMessage(UnityListenerMethods.NativeHandler.MYO_ORIENTATION_DATA, String.format("%f %f %f %f", rotation.w(), rotation.x(), rotation.y(), rotation.z()));
             }
 
             @Override
@@ -74,7 +74,7 @@ public class MyoNativeHandler {
                         poseText = "Spread";
                         break;
                 }
-                sendMessage("MyoPose", poseText);
+                sendMessage(UnityListenerMethods.NativeHandler.MYO_POSE, poseText);
             }
 
             @Override
@@ -83,8 +83,8 @@ public class MyoNativeHandler {
 
                 Toast.makeText(UnityUtils.getUnityContext(), "Myo settings: Arm=" + myo.getArm().name().toLowerCase() + ", Direction=" + myo.getXDirection().name().toLowerCase(), Toast.LENGTH_LONG).show();
 
-                sendMessage("MyoArm", myo.getArm().name());
-                sendMessage("MyoDirection", myo.getXDirection().name());
+                sendMessage(UnityListenerMethods.NativeHandler.MYO_ARM, myo.getArm().name());
+                sendMessage(UnityListenerMethods.NativeHandler.MYO_X_DIRECTION, myo.getXDirection().name());
 
                 MyoNativeHandler.instance().connectedMyo = myo;
             }
@@ -92,6 +92,7 @@ public class MyoNativeHandler {
             @Override
             public void onDisconnect(Myo myo, long timestamp) {
                 Toast.makeText(UnityUtils.getUnityContext(), "Myo Disconnected!", Toast.LENGTH_SHORT).show();
+                sendMessage(UnityListenerMethods.NativeHandler.MYO_DISCONNECTED, "");
             }
         };
 
