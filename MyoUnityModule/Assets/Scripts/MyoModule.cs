@@ -88,16 +88,8 @@ public class MyoHandler:MonoBehaviour,IMyoHandler
 
 
     #region Listener for android stuff
-
-
-    public void MyoRotation(string param)
-    {
-        string[] arr = param.Split(' ');
-        //myo.transform.eulerAngles = new Vector3(float.Parse(arr[1]), float.Parse(arr[2]), float.Parse(arr[0]));
-        //myo.transform.localEulerAngles = new Vector3(float.Parse(arr[1]), float.Parse(arr[2]), float.Parse(arr[0]));
-    }
-
-    public void MyoQuaternion(string param)
+    
+    public void MyoOrientation(string param)
     {
         string[] arr = param.Split(' ');
         /*
@@ -109,6 +101,7 @@ public class MyoHandler:MonoBehaviour,IMyoHandler
         );
         thalmicMyo.SetQuaternion(myoQuat);
         */
+        _myoHandlerListener.MyoOrientation();
     }
 
     public void MyoPose(string param)
@@ -141,6 +134,7 @@ public class MyoHandler:MonoBehaviour,IMyoHandler
             }
         }
         */
+        _myoHandlerListener.MyoPose();
     }
 
     public void MyoArm(string armName)
@@ -160,6 +154,7 @@ public class MyoHandler:MonoBehaviour,IMyoHandler
                 break;
         }
         */
+        _myoHandlerListener.MyoArm();
     }
 
     public void MyoDirection(string directionName)
@@ -179,7 +174,14 @@ public class MyoHandler:MonoBehaviour,IMyoHandler
                 break;
         }
         */
+        _myoHandlerListener.MyoDirection();
     }
+
+    public void MyoDisconnected()
+    {
+        _myoHandlerListener.MyoDisconnected();
+    }
+
     /*
     public string GetMyoPose() { return curPose; }
     */
