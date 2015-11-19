@@ -54,6 +54,7 @@ public class MyoNativeHandler {
                 log("myo pose performed: " + pose.toString());
                 switch (pose) {
                     case UNKNOWN:
+                        poseText = "Unknown";
                         break;
                     case REST:
                         poseText = "Rest";
@@ -101,19 +102,17 @@ public class MyoNativeHandler {
         hub.setLockingPolicy(Hub.LockingPolicy.NONE);
     }
 
-    public int myoNotifyUserAction()
+    public void myoNotifyUserAction()
     {
         log("myo notify user action");
 
         if(connectedMyo != null)
         {
             connectedMyo.notifyUserAction();
-            return 0;
         }
-        return 1;
     }
 
-    public int myoVibrate(String typeName)
+    public void myoVibrate(String typeName)
     {
         log("vibrate myo: " + typeName);
         if(connectedMyo != null)
@@ -132,24 +131,20 @@ public class MyoNativeHandler {
                     type = Myo.VibrationType.SHORT;
             }
             connectedMyo.vibrate(type);
-            return 0;
         }
-        return 1;
     }
 
-    public int myoLock()
+    public void myoLock()
     {
         log("myo lock");
 
         if(connectedMyo != null)
         {
             connectedMyo.lock();
-            return 0;
         }
-        return 1;
     }
 
-    public int myoUnlock(String unlockTypeName)
+    public void myoUnlock(String unlockTypeName)
     {
         log("myo unlock: " + unlockTypeName);
 
@@ -167,9 +162,7 @@ public class MyoNativeHandler {
                     break;
             }
             connectedMyo.unlock(type);
-            return 0;
         }
-        return 1;
     }
 
     private void log(String message)
