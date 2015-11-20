@@ -1,4 +1,4 @@
-package eu.stepanvyterna.games.utils.myo.myolibrary;
+package com.thalmic.myo.unity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.util.Log;
 import com.thalmic.myo.Hub;
 
 /**
- * Created by Steve on 10.11.2015.
+ * Created by St3veV on 10.11.2015.
  */
 public class MyoNativeConnector {
 

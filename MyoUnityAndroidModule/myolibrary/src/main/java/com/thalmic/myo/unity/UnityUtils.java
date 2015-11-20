@@ -1,4 +1,4 @@
-package eu.stepanvyterna.games.utils.myo.myolibrary;
+package com.thalmic.myo.unity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -6,7 +6,7 @@ import android.content.Context;
 import com.unity3d.player.UnityPlayer;
 
 /**
- * Created by Steve on 10.11.2015.
+ * Created by St3veV on 10.11.2015.
  */
 public class UnityUtils {
 

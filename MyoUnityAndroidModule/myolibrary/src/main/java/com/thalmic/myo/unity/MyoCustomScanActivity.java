@@ -1,4 +1,4 @@
-package eu.stepanvyterna.games.utils.myo.myolibrary;
+package com.thalmic.myo.unity;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -11,6 +11,9 @@ import android.widget.FrameLayout;
 
 import com.thalmic.myo.Hub;
 
+/**
+ * Created by St3veV on 10.11.2015.
+ */
 public class MyoCustomScanActivity extends Activity {
 
     private static String TAG = "MyoCustomScanActivity";
@@ -29,8 +32,7 @@ public class MyoCustomScanActivity extends Activity {
             return;
         }
 
-        int widthId = this.getResources().getIdentifier("myosdk__fragment_scan_window_width", "dimen", getPackageName());
-        int width = this.getResources().getDimensionPixelSize(widthId);
+        int width = this.getResources().getDimensionPixelSize(this.getResources().getIdentifier("myosdk__fragment_scan_window_width", "dimen", getPackageName()));
         int height = this.getResources().getDimensionPixelSize(this.getResources().getIdentifier("myosdk__fragment_scan_window_height", "dimen", getPackageName()));
         if (width > 0 && height > 0) {
             this.getWindow().setLayout(width, height);

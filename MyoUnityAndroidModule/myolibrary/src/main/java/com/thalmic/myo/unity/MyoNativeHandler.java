@@ -1,4 +1,4 @@
-package eu.stepanvyterna.games.utils.myo.myolibrary;
+package com.thalmic.myo.unity;
 
 import android.util.Log;
 import android.widget.Toast;
@@ -11,7 +11,7 @@ import com.thalmic.myo.Pose;
 import com.thalmic.myo.Quaternion;
 
 /**
- * Created by Steve on 10.11.2015.
+ * Created by St3veV on 10.11.2015.
  */
 public class MyoNativeHandler {
 
