@@ -46,7 +46,7 @@ public class MyoNativeConnector {
         if (debug) {
             Log.d(TAG, "Showing scan activity");
         }
-        Intent intent = new Intent(UnityUtils.getUnityContext(), MyoCustomScanActivity.class);
+        Intent intent = new Intent(UnityUtils.getUnityContext(), MyoUnityScanActivity.class);
         Bundle extras = new Bundle();
         extras.putString("appId", appId);
         intent.putExtras(extras);

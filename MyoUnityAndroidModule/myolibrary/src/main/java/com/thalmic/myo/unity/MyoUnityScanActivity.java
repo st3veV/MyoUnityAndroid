@@ -14,9 +14,9 @@ import com.thalmic.myo.Hub;
 /**
  * Created by St3veV on 10.11.2015.
  */
-public class MyoCustomScanActivity extends Activity {
+public class MyoUnityScanActivity extends Activity {
 
-    private static String TAG = "MyoCustomScanActivity";
+    private static String TAG = "MyoUnityScanActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
