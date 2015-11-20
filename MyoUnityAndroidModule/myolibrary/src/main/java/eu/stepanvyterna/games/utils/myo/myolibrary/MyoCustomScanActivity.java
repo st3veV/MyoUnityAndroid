@@ -18,7 +18,7 @@ public class MyoCustomScanActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        String appId = savedInstanceState.getString("appId");
+        String appId = getIntent().getExtras().getString("appId");
 
         Hub hub = Hub.getInstance();
         boolean initSuccess = hub.init(UnityUtils.getUnityContext(), appId);
